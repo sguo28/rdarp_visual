@@ -105,6 +105,6 @@ L.geoJson(nodes1,{
 
 
 map.addLayer(openstreetmap).fitBounds(bounds)
-hg.resize({width:1000,height:300})
+// hg.resize({width:1000,height:300})
 
 L.marker([33.4970481,-86.7943605], {icon:DepotIcon}).addTo(map).bindPopup("Depot")
