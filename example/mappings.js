@@ -233,13 +233,16 @@ function getBinaryColor(x) {
     '#847e80';
 }
 
-var DepotIcon = L.icon({
-    iconUrl: 'figs/bus.png',
-
-    iconSize:     [38, 38], // size of the icon
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    popupAnchor:  [33.497, -86.792] // point from which the popup should open relative to the iconAnchor
+var DepotIconFun = L.Icon.extend({
+    options:{
+        iconSize:     [38, 38], // size of the icon
+        iconAnchor:   [12,36], // point of the icon which will correspond to marker's location
+        popupAnchor:  [33.497, -86.792] // point from which the popup should open relative to the iconAnchor    
+    }
 });
+
+var DepotIcon = new DepotIconFun({iconUrl: 'figs/bus.png'
+})
 
 var OIcon = L.icon({
     iconUrl: 'figs/home.png',

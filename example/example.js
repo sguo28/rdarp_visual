@@ -35,12 +35,12 @@ const openstreetmap = L.tileLayer(url, {
 const displayGroup = new L.LayerGroup()
 displayGroup.addTo(map)
 
-const bounds = new L.LatLngBounds(new L.LatLng(33.31750533299112, -87.06000627772214), new L.LatLng(33.75249115087517, -86.50382344476166))
+const bounds = new L.LatLngBounds(new L.LatLng(33.2, -87.06), new L.LatLng(33.735, -86.50))
 
 const hg = L.control.heightgraph({
     mappings: colorMappings,
     graphStyle: {
-        opacity: 0.8,
+        opacity: 0.75,
         'fill-opacity': 0.5,
         'stroke-width': '2px'
     },
@@ -79,7 +79,7 @@ L.geoJson(geojson1,{
             "color": getColor(features.properties.attributeType), // in mappings
             "weight": getWidth(features.properties.attributeType), // in mappings
             "opacity":getWidth(features.properties.attributeType)/10*2,            
-				"fill-opacity": 0.6,
+            "fill-opacity": 0.5,
             "dashArray": "3, 5"
         }
     }
@@ -97,8 +97,6 @@ L.geoJson(nodes1,{
         	radius: 8, 
         	fillOpacity: 0.85
         });
-        // return new L.marker(feature.geometry.coordinates,{icon: L.icon({iconUrl:"figs/home.png",iconSize: [32, 37],
-        // iconAnchor: [10, 32]})})
     }
 }
 ).addTo(displayGroup)
